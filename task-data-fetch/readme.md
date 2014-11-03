@@ -9,5 +9,5 @@ Create a mysql database, with students table having two fields Name(varchar), Ro
 
 ## useful info
 
-index.html - html and angular code
-fetch.php  - To retrieve the data from mysql
+- index.html:- html and angular code
+- fetch.php:- To retrieve the data from mysql

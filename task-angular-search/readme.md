@@ -5,8 +5,8 @@ simple search with AngularJS and PHP
 
 ## useful info
 
-search-form.html - html code for form
-search.js - Angular Controller code
-search.php - server-side script
+- search-form.html:- html code for form
+- search.j:- Angular Controller code
+- search.php:- server-side script
 
 
