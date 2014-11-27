@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	.col-md-3
+	.col-md-6
+		.panel.panel-primary.panel-primary-border 
+			.panel-heading Login
+			.panel-body
+				form.form-horizontal(method="post", action="/login")
+					.form-group
+						label.col-md-4.control-label Username
+						.col-md-8
+							.input-group
+								span.input-group-addon.glyphicon.glyphicon-user
+								input.form-control(name="username", type="text", palceholder="username")
+					.form-group
+						label.col-md-4.control-label Password
+						.col-md-8
+							.input-group
+								span.input-group-addon.glyphicon.glyphicon-lock
+								input.form-control(name="password", type="password")
+					.form-group
+						.col-md-offset-4.col-md-8
+							button.btn(type="submit", 
+							style="width:100%") Login
+						if message
+							.col-md-offset-4.col-md-8
+								#span(style="color:red") #{message}	
+	.col-md-3

@@ -1,0 +1,21 @@
+{
+  "name": "genericApp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "morgan": "~1.3.0",
+    "serve-favicon": "latest",
+    "debug": "latest",
+    "jade": "latest",
+    "mongoose": "latest",
+    "passport":"latest",
+    "passport-local":"latest",
+    "express-session":"latest"
+  }
+}

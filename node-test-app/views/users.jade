@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.row
+		.pull-right
+			a(href="/logout") Logout
+	.row
+		.panel.panel-primary.panel-primary-border 
+			.panel-heading User Profile: #{user.username}
+			.panel-body
+				.form-horizontal
+					.form-group
+						label.col-md-3.control-label User Name
+						.col-md-3
+							input.form-control(type="text", value="#{user.username}")
+					.form-group
+						label.col-md-3.control-label Full Name
+						.col-md-3
+							input.form-control(type="text", value="#{user.username}")
+					.form-group
+						label.col-md-3.control-label E-mail
+						.col-md-3
+							input.form-control(type="text", value="#{user.email}")
+					.form-group
+						label.col-md-3.control-label Company
+						.col-md-3
+							input.form-control(type="text", value="#{user.localtion}")
