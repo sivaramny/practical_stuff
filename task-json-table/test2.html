@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="customersController"> 
+
+<table border="1">
+<thead>
+                    <tr>
+                        <th>Title</th>
+			<th>Time</th>
+			<th>Image</th>
+                    </tr>
+</thead>
+
+<tbody>
+                    <tr ng-repeat="x in names">
+                        <td><a href='{{x.url}}'>{{x.title}}</a></td>
+                        <td>{{x.time}} - {{x.author}}</td>
+                        <td><img ng-src="{{x.banner}}" /></td>                        
+                    </tr>
+</tbody>
+
+
+</table>
+
+
+</div>
+
+<script>
+function customersController($scope) {
+  
+$scope.names = [
+{
+"title":"Multiple Ajax Image Upload without Refreshing Page using Jquery.",
+"url":"http://www.9lessons.info/2013/08/multiple-ajax-image-upload-refreshing.html",
+"banner":"multiple.jpg",
+"description":"Some Tesxt",
+"time":"Tuesday, August 6, 2013" ,
+"author":"Srinivas Tamada"
+},
+{
+"title":"Wall Script 6.0",
+"url":"http://www.9lessons.info/2013/07/wall-script.html",
+"banner":"WallBanner.jpg",
+"description":"Some Text",
+"time":"MONDAY, JULY 29, 2013" ,
+"author":"Srinivas Tamada"
+},
+{
+"title":"Simple Drop Down Menu with Jquery and CSS",
+"url":"http://www.9lessons.info/2012/06/simple-drop-down-menu-with-jquery-and.html",
+"banner":"dropdown.png",
+"description":"Some Text",
+"time":"WEDNESDAY, JUNE 20, 2012" ,
+"author":"Ravi Tamada"
+}
+
+]
+
+}
+</script>
+
+</body>
+</html>
+

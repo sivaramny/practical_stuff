@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="genApp">
+<head>
+	<title>Displaying JSON Data in table using Angular  </title>
+	<!-- including Bootstrap CSS  -->	
+        <link rel="stylesheet" href="../styles/bootstrap.css">
+	<!-- including Angular js  -->	
+        <script src="../../scripts/angular.js"></script>
+	<script>
+	var genApp = angular.module('genApp', []).
+	controller('GenCtrl', function($scope,$http) {
+	  	$http.get("device.json")
+		  .success(function(response) {
+			
+			$scope.devices = response;
+			//console.log($scope.devices);
+		  });
+		});
+	</script>
+<body>
+
+	      <div ng-controller="GenCtrl">
+            	<table class="table">
+		    <tr>
+			<th ng-repeat="(key, val) in devices[0]">{{key}}</th>
+		    </tr>
+		    <tr ng-repeat="item in devices">
+			<td ng-repeat="(key, val) in item">{{val}}</td>
+		    </tr>
+		</table>
+      	     </div>
+
+
+</body>
+</html>

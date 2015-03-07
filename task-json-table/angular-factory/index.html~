@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+   
+       <!-- including Bootstrap CSS  -->	
+       <link rel="stylesheet" href="bootstrap.css">
+       <!-- including application specific CSS  -->	
+       <link rel="stylesheet" href="app.css">
+       <!-- including fonts CSS  -->	
+       <link rel="stylesheet" href="fonts.css" >
+       <link rel="stylesheet" href="font-awesome.css" >
+       <!-- including Angular js  -->	
+    <script src="angular.js"></script>
+    <!-- including jquery js  -->	
+    <script src="jquery-1.10.2.min.js"></script>
+	<script src="angular-resource.js"></script>
+    <script src="ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src="script.js"></script>
+  </head>
+
+  <body>
+    <h4>Paginated Friends</h4>
+    <section class="main" ng-controller="contentCtrl">
+      <div ng-repeat="friend in filteredFriends">
+        {{friend.name}}
+      </div>
+      <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+      <p>
+      total Items: {{totalItems}}<br />
+      Items per page: {{itemsPerPage}}<br />
+      Current Page: {{currentPage}}
+      </p>
+    </section>
+  </body>
+
+</html>
