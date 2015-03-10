@@ -1,0 +1,41 @@
+<!-- www/index.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html ng-app='tech-learning'  class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html ng-app='tech-learning'  class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html ng-app='tech-learning'  class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app='tech-learning' class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Bootstrap css -->
+        <link rel="stylesheet" href="../styles/bootstrap.css">
+    </head>
+    <body ng-controller="TodoController">
+ 
+      <h1>Todos</h1>
+ 
+      <ol id="todos">
+        <!-- http://mutablethought.com/2013/04/25/angular-js-ng-repeat-no-longer-allowing-duplicates/ -->
+        <li ng-repeat="todo in todos track by $id($index)">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span> 
+          <a class="todo-delete" ng-click="deleteTodo(todo)" href="#">(X)</a>
+        </li>
+      </ol>
+ 
+      <form id="addNewTodo" ng-submit="add()">
+        <p>
+          <input id="todoName" name="name" ng-model="todoText" />
+          <button type="submit">Add</button>
+        </p>
+      </form>
+ 
+        <!-- JS -->
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+        <script src="../scripts/angular.js"></script>
+        <script type='text/javascript' src='js/tech-learning-angular.js'></script>
+    </body>
+</html>
