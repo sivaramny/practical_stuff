@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'TeamF1 Networks Pvt Ltd' });
+  res.render('index', { title: 'Sivaram' });
 });
 
 module.exports = router;
