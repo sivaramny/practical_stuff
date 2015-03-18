@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>Default Style Example</title>
+  <link href="angular-toggle-switch.css" media="all" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="../scripts/angular.js"></script>
+  
+  <script type="text/javascript" src="angular-toggle-switch.js"></script>
+  <script type="text/javascript">
+    angular.module('app', ['toggle-switch']);
+  </script>
+</head>
+<body>
+  <h2>
+    Default Style Example
+  </h2>
+ 
+  <p>
+    <div toggle-switch class="switch-large switch-primary" model="switchStatus"></div>
+    {{switchStatus}}
+  </p>
+
+</body>
+</html>
