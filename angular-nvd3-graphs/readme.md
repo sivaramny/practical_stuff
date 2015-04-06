@@ -39,4 +39,19 @@ Ref: https://cmaurer.github.io/angularjs-nvd3-directives
 
 - Tooltip Content : Controls how the tooltips are displayed. Datatype: Function
 
+###Types of Charts
+
+- Line Charts : nvd3-line-chart
+- Cumulative Line Charts : nvd3-cumulative-line-chart
+- Line with Focus Charts : nvd3-line-with-focus-chart
+- Stacked Area Charts : nvd3-stacked-area-chart
+- Discrete Bar Charts : nvd3-discrete-bar-chart
+- Multi Bar Charts : nvd3-multi-bar-chart
+- Multi Bar Horizontal Charts : nvd3-multi-bar-horizontal-chart
+- Pie Charts : nvd3-pie-chart
+- Scatter Charts : nvd3-scatter-chart
+- Sparkline Charts : nvd3-sparkline-chart
+- Bullet Charts : nvd3-bullet-chart
+
+
 
