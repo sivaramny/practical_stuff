@@ -1,0 +1,12 @@
+.graph-block{
+    border: 1px solid #ccc;
+    float: left;
+    height: 250px !important;
+    width: 250px !important;
+}
+
+.main-block{
+	float:left;
+	margin: 15px;
+	width:250px;
+}

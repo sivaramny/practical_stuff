@@ -8,6 +8,7 @@
     <title>Nvd3 Graphs demo</title>
     <!-- Bootstrap -->
     <link href="../styles/bootstrap.css" rel="stylesheet">
+	<link href="app.css" rel="stylesheet">
     <link rel="stylesheet" href="../scripts/nv.d3.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,8 +18,8 @@
     <![endif]-->
   </head>
 
-  <body ng-controller="GraphCtrl" style="margin:50px;padding:20px;">
-    <div class="container">
+  <body ng-controller="GraphCtrl" style="margin:10px;padding:0px;">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
             <h3 align="center">Graphs Demo</h3>
@@ -28,8 +29,9 @@
       <div class="row">
         <div class="col-md-12">
         <!-- Line Chart Starts here-->  
-        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+        <div class="main-block">
             <h4>Line chart</h4>
+	    <div class="graph-block">
           	<nvd3-line-chart
               	  data="exampleData"
                   id="exampleId"
@@ -42,73 +44,80 @@
                   showYAxis="true">
                   	<svg></svg>
              </nvd3-line-chart>
+	   </div>
         </div>
         <!-- Line Chart Ends here-->   
         <!-- Cummelative Line Chart Starts here-->   
-        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+        <div class="main-block">
             <h4>cummelative line chart</h4>
-            <nvd3-cumulative-line-chart
-        	    data="cumelativeData"
-        	    id="cumelativeData"
-        	    width="350"
-        	    height="350"
-        	    showXAxis="true"
-        	    showYAxis="true"
-        	    x="xFunction()"
-        	    y="yFunction()"
-              margin="{left:10,top:10,bottom:30,right:10}">
-        	    <svg></svg>
-      	    </nvd3-cumulative-line-chart>
+	    <div class="graph-block">
+		    <nvd3-cumulative-line-chart
+			    data="cumelativeData"
+			    id="cumelativeData"
+			    width="350"
+			    height="350"
+			    showXAxis="true"
+			    showYAxis="true"
+		      	    margin="{left:10,top:10,bottom:30,right:10}">
+			    <svg></svg>
+	      	    </nvd3-cumulative-line-chart>	
+             </div>
         </div>
         <!-- Cummelative Line Chart Ends here-->   
         <!-- Pie Chart Starts here-->   
-        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+        <div class="main-block">
             <h4>Pie chart</h4>
-            <nvd3-pie-chart
-        	    	data="pieData"
-            		id="pieData"
-            		width="350"
-            		height="350"
-            		x="xFunction()"
-            		y="yFunction()"
-                margin="{left:10,top:10,bottom:30,right:10}"
-            		showLabels="true">
-        		    <svg></svg>
-            </nvd3-pie-chart>
+            <div class="graph-block">
+		    <nvd3-pie-chart
+			    	data="pieData"
+		    		id="pieData"
+		    		width="350"
+		    		height="350"
+		    		x="xFunction()"
+		    		y="yFunction()"
+		        	margin="{left:10,top:10,bottom:30,right:10}"
+		    		showLabels="true">
+				    <svg></svg>
+		    </nvd3-pie-chart>
+	    </div>
         </div>
         <!-- Pie Chart Ends here-->
         <!-- Donut Chart Starts here-->
-        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+        <div class="main-block">
             <h4>Pie-donut chart</h4>
-            <nvd3-pie-chart
-            	  data="pieData"
-                id="donutLabelsOutsideExample"
-                width="350"
-                height="350"
-                x="xFunction()"
-                y="yFunction()"
-                donut="true"
-                showLabels="true"
-                margin="{left:10,top:10,bottom:30,right:10}"
-                donutLabelsOutside="true">
-                <svg></svg>
-            </nvd3-pie-chart>
+            <div class="graph-block">
+		    <nvd3-pie-chart
+		    	  data="pieData"
+		        id="donutLabelsOutsideExample"
+		        width="350"
+		        height="350"
+		        x="xFunction()"
+		        y="yFunction()"
+		        donut="true"
+		        showLabels="true"
+		        margin="{left:10,top:10,bottom:30,right:10}"
+		        donutLabelsOutside="true">
+		        <svg></svg>
+		    </nvd3-pie-chart>
+            </div>
         </div>
         <!-- Donut Chart Ends here-->
         <!-- Bar Chart Stars here-->
-        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+        <div class="main-block">
             <h4>Bar chart</h4>
-            <nvd3-discrete-bar-chart
-          	  data="barchartData"
-              id="barchartData"
-              showXAxis="true"
-              showYAxis="true"
-              xAxisTickFormat="xAxisTickFormatFunction()"
-              margin="{left:10,top:10,bottom:30,right:10}"
-              width="350"
-              height="400">
-              <svg></svg>
-            </nvd3-discrete-bar-chart>
+	    <div class="graph-block">
+		    <nvd3-discrete-bar-chart
+		      data="barchartData"
+		      id="barchartData"
+		      showXAxis="true"
+		      showYAxis="true"
+		      xAxisTickFormat="xAxisTickFormatFunction()"
+		      margin="{left:10,top:10,bottom:30,right:10}"
+		      width="350"
+		      height="400">
+		      <svg></svg>
+		    </nvd3-discrete-bar-chart>
+	    </div>
         </div>
         <!-- Bar Chart Ends here-->
       </div>
