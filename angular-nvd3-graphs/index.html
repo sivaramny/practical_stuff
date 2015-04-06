@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Nvd3 graphs demo</title>
-
+    <title>Nvd3 Graphs demo</title>
     <!-- Bootstrap -->
     <link href="../styles/bootstrap.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../scripts/nv.d3.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,91 +17,110 @@
     <![endif]-->
   </head>
 
-  <body ng-controller="ExampleCtrl">
-   <div>
-    <h1>Line chart</h1>
-    
-	<nvd3-line-chart
-    	data="exampleData"
-        id="exampleId"
-        xAxisTickFormat="xAxisTickFormatFunction()"
-        yAxisTickFormat="yAxisTickFormatFunction()"
-        width="550"
-        height="350"
-        showXAxis="true"
-        showYAxis="true">
-        	<svg></svg>
-   </nvd3-line-chart>
-  </div>
-  <div>
-    <h1>cummelative line chart</h1>
-    <nvd3-cumulative-line-chart
-	    data="cumelativeData"
-	    id="cumelativeData"
-	    width="650"
-	    height="400"
-	    showXAxis="true"
-	    showYAxis="true"
-	    tooltips="true"
-	    interactive="true"
-	    x="xFunction()"
-	    y="yFunction()"
-            margin="{left:70,top:70,bottom:70,right:125}">
-	    <svg></svg>
-	</nvd3-cumulative-line-chart>
+  <body ng-controller="GraphCtrl" style="margin:50px;padding:20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <!-- Line Chart Starts here-->  
+        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+            <h4>Line chart</h4>
+          	<nvd3-line-chart
+              	  data="exampleData"
+                  id="exampleId"
+                  xAxisTickFormat="xAxisTickFormatFunction()"
+                  yAxisTickFormat="yAxisTickFormatFunction()"
+                  width="350"
+                  height="350"
+                  margin="{left:10,top:10,bottom:30,right:10}"
+                  showXAxis="true"
+                  showYAxis="true">
+                  	<svg></svg>
+             </nvd3-line-chart>
+        </div>
+        <!-- Line Chart Ends here-->   
+        <!-- Cummelative Line Chart Starts here-->   
+        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+            <h4>cummelative line chart</h4>
+            <nvd3-cumulative-line-chart
+        	    data="cumelativeData"
+        	    id="cumelativeData"
+        	    width="350"
+        	    height="350"
+        	    showXAxis="true"
+        	    showYAxis="true"
+        	    x="xFunction()"
+        	    y="yFunction()"
+              margin="{left:10,top:10,bottom:30,right:10}">
+        	    <svg></svg>
+      	    </nvd3-cumulative-line-chart>
+        </div>
+        <!-- Cummelative Line Chart Ends here-->   
+        <!-- Pie Chart Starts here-->   
+        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+            <h4>Pie chart</h4>
+            <nvd3-pie-chart
+        	    	data="pieData"
+            		id="pieData"
+            		width="350"
+            		height="350"
+            		x="xFunction()"
+            		y="yFunction()"
+                margin="{left:10,top:10,bottom:30,right:10}"
+            		showLabels="true">
+        		    <svg></svg>
+            </nvd3-pie-chart>
+        </div>
+        <!-- Pie Chart Ends here-->
+        <!-- Donut Chart Starts here-->
+        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+            <h4>Pie-donut chart</h4>
+            <nvd3-pie-chart
+            	  data="pieData"
+                id="donutLabelsOutsideExample"
+                width="350"
+                height="350"
+                x="xFunction()"
+                y="yFunction()"
+                donut="true"
+                showLabels="true"
+                margin="{left:10,top:10,bottom:30,right:10}"
+                donutLabelsOutside="true">
+                <svg></svg>
+            </nvd3-pie-chart>
+        </div>
+        <!-- Donut Chart Ends here-->
+        <!-- Bar Chart Stars here-->
+        <div style="float: left; width: 400px; height: 300px ! important; margin-bottom: 100px;">
+            <h4>Bar chart</h4>
+            <nvd3-discrete-bar-chart
+          	  data="barchartData"
+              id="barchartData"
+              showXAxis="true"
+              showYAxis="true"
+              xAxisTickFormat="xAxisTickFormatFunction()"
+              margin="{left:10,top:10,bottom:30,right:10}"
+              width="350"
+              height="400">
+              <svg></svg>
+            </nvd3-discrete-bar-chart>
+        </div>
+        <!-- Bar Chart Ends here-->
+      </div>
+      </div>
     </div>
-    <div>
-    <h1>Pie chart</h1>
-    <nvd3-pie-chart
-	    	data="pieData"
-		id="pieData"
-		width="550"
-		height="350"
-		x="xFunction()"
-		y="yFunction()"
-		showLabels="true">
-		<svg></svg>
-    </nvd3-pie-chart>
-    </div>
-    <div>
-     <h1>Pie-donut chart</h1>
-     <nvd3-pie-chart
-    	data="pieData"
-        id="donutLabelsOutsideExample"
-        width="550"
-        height="350"
-        x="xFunction()"
-        y="yFunction()"
-        donut="true"
-        showLabels="true"
-        donutLabelsOutside="true">
-         <svg height="250"></svg>
-    </nvd3-pie-chart>
-   </div>
 
-    <div>
-      <h1>Bar chart</h1>
-      <nvd3-discrete-bar-chart
-    	data="barchartData"
-        id="barchartData"
-        showXAxis="true"
-        showYAxis="true"
-        xAxisTickFormat="xAxisTickFormatFunction()"
-        width="550"
-        height="400">
-        	<svg></svg>
-    </nvd3-discrete-bar-chart>
-    </div>
+    <!-- angular js -->
     <script src="../scripts/angular.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../scripts/jquery-1.10.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../scripts/bootstrap.min.js"></script>
-     <script src="../scripts/angularjs-nvd3-directives.js"></script>
-
+    <!-- Include angularjs-nvd3-directives.js  -->
+    <script src="../scripts/angularjs-nvd3-directives.js"></script>
+    <!-- Include other dependencies for nvd3.js and d3.js -->
     <script src="../scripts/d3.js"></script>
-	<script src="../scripts/nv.d3.js"></script>
-	<link rel="stylesheet" href="../scripts/nv.d3.css"/>
-	<script src="app.js"></script>
+  	<script src="../scripts/nv.d3.js"></script>
+    <!-- app specific js -->
+	  <script src="app.js"></script>
   </body>
 </html>
