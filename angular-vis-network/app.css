@@ -1,0 +1,23 @@
+.deviderLeftBdr {
+  border-left:  1px solid #cccccc;
+  margin-left: -1px !important;
+  /*margin-bottom: -70px;*/
+
+}
+.deviderRightBdr {
+   border-right:  1px solid #cccccc;
+  /*  height: 400px;*/
+}
+
+.graph-block{
+    border: 1px solid #ccc;
+    float: left;
+    height: 250px !important;
+    width: 250px !important;
+}
+
+.main-block{
+	float:left;
+	margin: 15px;
+	width:250px;
+}

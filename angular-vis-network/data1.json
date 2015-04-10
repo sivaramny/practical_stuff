@@ -1,0 +1,63 @@
+{
+   "error":0,
+   "nodes":[
+      {
+         "id":1,
+         "label":"A",
+         "color": "yellow"
+      },
+      {
+         "id":2,
+         "label":"B",
+         "color": "yellow"
+      },
+      {
+         "id":3,
+         "label":"C",
+         "color": "yellow"
+      },
+      {
+         "id":6,
+         "label":"F",
+         "color": "yellow"
+      }
+   ],
+   "edges":[
+      {
+         "from":1,
+         "to":2,
+         "label": "1 to 2",
+         "color": "gray"
+      },
+      {
+         "from":1,
+         "to":3,
+         "label": "1 to 3",
+         "color": "gray"
+      },
+      {
+         "from":1,
+         "to":4,
+         "label": "1 to 4",
+         "color": "gray"
+      },
+      {
+         "from":1,
+         "to":5,
+         "label": "1 to 5",
+         "color": "gray"
+      },
+      {
+         "from":1,
+         "to":6,
+         "label": "1 to 6",
+         "color": "gray"
+      },
+      {
+         "from":5,
+         "to":6,
+         "label": "1 to 6",
+         "color": "gray"
+      }
+   ]
+}
