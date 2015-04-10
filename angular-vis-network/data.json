@@ -3,27 +3,27 @@
    "nodes":[
       {
          "id":1,
-         "label":"Peter Griffin"
+         "label":"A"
       },
       {
          "id":2,
-         "label":"Lois Pewterschmidt"
+         "label":"B"
       },
       {
          "id":3,
-         "label":"Chris Griffin"
+         "label":"C"
       },
       {
          "id":4,
-         "label":"Meg Griffin"
+         "label":"D"
       },
       {
          "id":5,
-         "label":"Stewie Griffin"
+         "label":"E"
       },
       {
          "id":6,
-         "label":"Brian Griffin"
+         "label":"F"
       }
    ],
    "edges":[
@@ -51,9 +51,5 @@
          "from":5,
          "to":6
       }
-   ],
-   "options":{
-      "width":"100%",
-      "height":"600px"
-   }
+   ]
 }
