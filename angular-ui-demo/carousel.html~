@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="uiApp">
+  <head>
+    <script src="../scripts/angular.js"></script>
+    <script src="../scripts/angular-touch.min.js"></script>
+    <script src="../scripts/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="app.js"></script>
+    <link href="../styles/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div ng-controller="CarouselDemoCtrl">
+
+  <div style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+  </div>
+</div>
+  </body>
+</html>
+
+
