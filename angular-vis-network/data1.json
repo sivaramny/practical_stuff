@@ -4,22 +4,26 @@
       {
          "id":1,
          "label":"A",
-         "color": "yellow"
+         "color": "yellow",
+         "title":"A"
       },
       {
          "id":2,
          "label":"B",
-         "color": "yellow"
+         "color": "yellow",
+         "title":"B"
       },
       {
          "id":3,
          "label":"C",
-         "color": "yellow"
+         "color": "yellow",
+         "title":"C"
       },
       {
          "id":6,
          "label":"F",
-         "color": "yellow"
+         "color": "yellow",
+         "title":"D"
       }
    ],
    "edges":[

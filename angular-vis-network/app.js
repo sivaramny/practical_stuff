@@ -34,7 +34,7 @@ app.controller('AppCtrl', ['$scope', '$window', '$http', function($scope, $windo
             };
             angular.forEach($scope.graph.nodes,function(node){
               //-setting group key to all objects
-              //-node.title = "switch";
+              node.title = "switch";
               //-setting different group key to each object
               $scope.graph.nodes[0].group = "switch";
               $scope.graph.nodes[1].group = "desktop";

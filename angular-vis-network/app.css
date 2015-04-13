@@ -1,12 +1,10 @@
 .deviderLeftBdr {
   border-left:  1px solid #cccccc;
   margin-left: -1px !important;
-  /*margin-bottom: -70px;*/
 
 }
 .deviderRightBdr {
    border-right:  1px solid #cccccc;
-  /*  height: 400px;*/
 }
 
 .graph-block{
@@ -20,4 +18,8 @@
 	float:left;
 	margin: 15px;
 	width:250px;
+}
+
+.network-tooltip{
+  position: absolute;
 }
