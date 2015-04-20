@@ -14,3 +14,19 @@ path.link {
   stroke: #ccc;
   stroke-width: 1.5px;
 }
+
+.hyper {
+	cursor:pointer;
+	color: blue;
+	text-decoration: none;
+}
+
+.hyper:hover {
+	color: yellow;
+	text-decoration: underline;
+}
+
+.hover{
+	fill:red;
+}
+

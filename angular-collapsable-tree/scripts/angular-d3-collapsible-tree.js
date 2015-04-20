@@ -16,24 +16,23 @@ function collapsibleTree () {
       nodes:  '='
     },
     link: function ( scope, element ) {
-      var m = [20, 120, 20, 120],
+      var m = [30, 120, 20, 120],
           w = 1280 - m[1] - m[3],
           h = 800 - m[0] - m[2],
           i = 0,
           root;
 
       var tree = d3.layout.tree()
-          .size([h, w]);
+          .size([h, w - 160]);
 
       var diagonal = d3.svg.diagonal()
-          .projection(function(d) { return [d.y, d.x]; });
+          .projection(function(d) { return [d.x, d.y]; });
 
       var vis = d3.select("collapsible-tree").append("svg:svg")
           .attr("width", w + m[1] + m[3])
           .attr("height", h + m[0] + m[2])
         .append("svg:g")
           .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
 
       scope.$watch('nodes', function () {
 
@@ -75,24 +74,31 @@ function collapsibleTree () {
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("svg:g")
             .attr("class", "node")
-            .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-            .on("click", function(d) { toggle(d); update(d); });
+	    .on("mouseover", mouseover)
+            .on("mouseout", mouseout)
+            .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; });
+            
 
         nodeEnter.append("svg:circle")
             .attr("r", 1e-6)
+	    .on("click", function(d) { toggle(d); update(d); })
             .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
-        nodeEnter.append("svg:text")
-            .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-            .attr("dy", ".35em")
-            .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return d.name; })
-            .style("fill-opacity", 1e-6);
+	//change the x attribute to a y attribute (align)
+	nodeEnter.append("text")
+	   .attr("y", function(d) { 
+	    return d.children || d._children ? -18 : 18; })
+	   .attr("dy", ".35em")
+	   .attr("text-anchor", "middle")
+	   .attr("class", "hyper")
+	   .text(function(d) { return d.name; })
+	   .on("click", click)
+	   .style("fill-opacity", 1);
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
-            .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
         nodeUpdate.select("circle")
             .attr("r", 4.5)
@@ -158,6 +164,24 @@ function collapsibleTree () {
           d.children = d._children;
           d._children = null;
         }
+      }
+      // Toggle children.
+      function click(d) {
+	alert(d.name);
+      }
+
+      function mouseover(d) {
+          d3.select(this).append("text")
+              .attr("class", "hover")
+              .attr('transform', function(d){ 
+                  return 'translate(5, -10)';
+              })
+              .text("Info about "+ d.name)
+              .style("left", (d3.event.pageX ) + "px")
+              .style("top", (d3.event.pageY) + "px");
+      }
+      function mouseout(d) {
+          d3.select(this).select("text.hover").remove();
       }
 
     }
