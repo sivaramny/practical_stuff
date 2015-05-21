@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<title>Angular JS, SVG Test</title>
+         <link rel="stylesheet" href="style.css">
+        <script src="../scripts/angular.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	  <h4 style="text-decoration:underline">Angular JS, SVG Test</h4>
+	  <div class="wrap">
+	    <svg-icon p="bookmark" height="40" width="40" fill="red"></svg-icon>
+	    <svg-icon p="calendar"></svg-icon>
+	    <svg-icon p="camera"></svg-icon>
+	    <svg-icon p="chat"></svg-icon>
+	    <svg-icon p="check"></svg-icon>
+	    <svg-icon p="chevrondown"></svg-icon>
+	    <svg-icon p="chevronleft"></svg-icon>
+	    <svg-icon p="chevronright"></svg-icon>
+	    <svg-icon p="chevronup"></svg-icon>
+	    <svg-icon p="clock"></svg-icon>
+	    <svg-icon p="close"></svg-icon>
+	    <svg-icon p="cloud"></svg-icon>
+	    <svg-icon p="cog"></svg-icon>
+	    <svg-icon p="compose"></svg-icon>
+	    <svg-icon p="dribbble"></svg-icon>
+	    <svg-icon p="expand"></svg-icon>
+	    <svg-icon p="external"></svg-icon>
+	    <svg-icon p="facebook"></svg-icon>
+	    <svg-icon p="file"></svg-icon>
+	    <svg-icon p="folder"></svg-icon>
+	    <svg-icon p="geolocation"></svg-icon>
+	    <svg-icon p="github"></svg-icon>
+	    <svg-icon p="grid"></svg-icon>
+	    <svg-icon p="heart"></svg-icon>
+	    <svg-icon p="home"></svg-icon>
+	    <svg-icon p="info"></svg-icon>
+	    <svg-icon p="link"></svg-icon>
+	    <svg-icon p="list"></svg-icon>
+	    <svg-icon p="lock"></svg-icon>
+	    <svg-icon p="mail"></svg-icon>
+	    <svg-icon p="musicnote"></svg-icon>
+	    <svg-icon p="next"></svg-icon>
+	    <svg-icon p="no"></svg-icon>
+	    <svg-icon p="pause"></svg-icon>
+	    <svg-icon p="picture"></svg-icon>
+	    <svg-icon p="pin"></svg-icon>
+	    <svg-icon p="play"></svg-icon>
+	    <svg-icon p="previous"></svg-icon>
+	    <svg-icon p="refresh"></svg-icon>
+	    <svg-icon p="repost"></svg-icon>
+	    <svg-icon p="search"></svg-icon>
+	    <svg-icon p="shoppingcart"></svg-icon>
+	    <svg-icon p="skull"></svg-icon>
+	    <svg-icon p="speakervolume"></svg-icon>
+	    <svg-icon p="speaker"></svg-icon>
+	    <svg-icon p="star"></svg-icon>
+	    <svg-icon p="tag"></svg-icon>
+	    <svg-icon p="trash"></svg-icon>
+	    <svg-icon p="triangledown"></svg-icon>
+	    <svg-icon p="triangleleft"></svg-icon>
+	    <svg-icon p="triangleright"></svg-icon>
+	    <svg-icon p="triangleup"></svg-icon>
+	    <svg-icon p="twitter"></svg-icon>
+	    <svg-icon p="user"></svg-icon>
+	    <svg-icon p="video"></svg-icon>
+	    <svg-icon p="warning"></svg-icon>
+	  </div>
+</body>
+</html>
