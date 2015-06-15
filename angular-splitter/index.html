@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Angular.js Layout</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <!--<link rel="stylesheet" href="ui-layout.css"/>-->
+    <style>
+	/**
+	  UI.Layout CSS
+	*************************************/
+	.stretch {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  /* Can be changed by hand ;)*/
+	  overflow: auto;
+	}
+
+	.ui-splitbar{
+	  display: block;
+	  background-color: green;
+	  right: auto;
+	  position: absolute;
+	  z-index: 99999;
+	}
+
+	.ui-layout-row > .ui-splitbar{
+	  height: 1px; width: 100%;
+	  cursor: row-resize;
+	}
+	.ui-layout-column > .ui-splitbar{
+	  width: 8px; height: 100%;
+	  cursor: col-resize;
+	}
+	body{
+		margin:0 auto;
+	}
+    </style>
+    <script src="../scripts/angular.js"></script>
+    <script src="ui-layout.js"></script>
+
+    <script>
+	var app = angular.module("app", ['ui.layout']);
+    </script>
+</head>
+<body  ng-app="app">
+	
+
+    <div ui-layout class="layout-mock">
+    	<header>Header</header>
+   		<ui-layout options="{ flow : 'column' }">
+    			<div>Section-I</div>
+    			<div>Section-II</div>
+    			<div>Section-III</div>
+    		</ui-layout>
+    	<footer>Footer</footer>
+    </div>
+
+
+
+</body>
+</html>
