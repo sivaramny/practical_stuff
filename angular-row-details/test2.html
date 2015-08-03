@@ -1,0 +1,38 @@
+
+<!-- Highlight-a-selected-row-in-ng-repeat-using-ng-class -->
+<!doctype html>
+<html lang="en-US" ng-app="foodApp">
+    <head>
+	<title>Highlight-a-selected-row</title>
+        <link href="../styles/bootstrap.css" rel="stylesheet" media="screen" />
+        <style>
+		.selected {
+			background-color:black;
+			color:white;
+			font-weight:bold;
+		}
+	</style>
+    </head>
+	<body  ng-controller="foodCtrl">
+		<table class="table table-bordered">
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+			<tr ng-repeat="item in foodItems" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index)">
+				<td>{{$index}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.price}}</td>
+				<td>{{item.quantity}}</td>
+			</tr>
+		</table>
+		<div>
+			selectedRow = {{selectedRow}}
+		</div>
+    		<script src="../scripts/angular.js"></script>
+		<script src="foodCtrl.js"></script>
+
+    </body>
+</html>
