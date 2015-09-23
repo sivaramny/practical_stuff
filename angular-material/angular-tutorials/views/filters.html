@@ -1,0 +1,86 @@
+
+<md-content class="md-padding">
+	<md-tabs md-dynamic-height md-border-bottom>
+	   	<md-tab label="Notes">
+		    <md-content class="md-padding">
+		    	<ul>
+		    		<li>
+		    			Filters are used for formatting data displayed to the user.
+		    		</li>
+		    		<li>
+		    			Filters can be added to expressions and directives using a pipe character.
+		    			<br/>
+		    			In javascript: $filter('filter')
+		    		</li>
+		    	</ul>
+		    	<div class="md-subhead">List of Pre-defined Filters</div>
+		    	<md-data-table-container>
+			          <table md-data-table md-row-select="selected" md-progress="deferred" >
+			            <thead >
+			              <tr>
+			                <th name="Name"></th>
+			                <th name="Description"></th>
+			              </tr>
+			            </thead>
+			           	<tbody>
+			           		<tr>
+			           			<td>uppercase</td>
+			           			<td>Format a string to uppercase.</td>
+			           		</tr>
+			           		<tr>
+			           			<td>lowercase</td>
+			           			<td>Format a string to lowercase.</td>
+			           		</tr>
+			           		<tr>
+			           			<td>currency</td>
+			           			<td>Formats a number as a currency (ie $1,234.56). When no currency symbol is provided, default symbol for current locale is used.</td>
+			           		</tr>
+			           		<tr>
+			           			<td>date</td>
+			           			<td>Formats date to a string based on the requested format.</td>
+			           		</tr>	
+			           		<tr>
+			           			<td>json</td>
+			           			<td>Allows you to convert a JavaScript object into JSON string.</td>
+			           		</tr>
+			           		<tr>
+			           			<td>limitTo</td>
+			           			<td>Creates a new array or string containing only a specified number of elements.</td>
+			           		</tr>	
+			           		<tr>
+			           			<td>OrderBy</td>
+			           			<td>Orders a specified array by the expression predicate. It is ordered alphabetically for strings and numerically for numbers. Note: if you notice numbers are not being sorted as expected, make sure they are actually being saved as numbers and not strings.</td>
+			           		</tr>	
+			           		<tr>
+			           			<td>filter</td>
+			           			<td>Selects a subset of items from array and returns it as a new array.</td>
+			           		</tr>	
+			           	</tbody>
+			          </table>
+			    </md-data-table-container>
+		    </md-content>
+	  	</md-tab>
+	  	<md-tab label="Examples">
+		    <md-content class="md-padding">
+		    	<md-card>
+		    		<md-card-content>
+							&lt;html&gt;<br />
+							  &lt;head&gt;<br />
+							      &lt;title&gt;Filters Demo1&lt;/title&gt;<br />
+							   &lt;/head&gt;<br />
+							   <br />
+							   &lt;body&gt;<br />
+							      &lt;div ng-app = "" ng-init = "person = {name:'Sivaram'
+							  };"&gt;<br />&lt;p&gt;Hello &#123; &#123;person.name | 'uppercase' &#125; &#125;!&lt;/p&gt;<br />
+							      &lt;/div&gt;<br />
+							      <br />
+							      &lt;script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"&gt;&lt;/script&gt;<br />
+							      <br />
+							   &lt;/body&gt;<br />
+							&lt;/html&gt;
+		    		</md-card-content>
+		    	</md-card>
+		    </md-content>
+	    </md-tab>
+	</md-tabs>
+</md-content>

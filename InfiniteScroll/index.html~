@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="infinitScrollTest">
+<head>
+<title>AngularJS Infinite Scrolling</title>
+        <!--<link rel="stylesheet" href="../styles/bootstrap.css">-->
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+	<script src="../scripts/angular.js"></script>
+	<script src="ng-infinite-scroll.js"></script>
+	
+
+<script>
+    	    var infiniteScroll = angular.module('infinitScrollTest',  ['infinite-scroll']);
+
+ 	    infiniteScroll.controller("infinitScrollController", ['$scope', function Calculator($scope) {    
+			$scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
+
+			$scope.loadMore = function() {
+			    var last = $scope.images[$scope.images.length - 1];
+			    for(var i = 1; i <= 8; i++) {
+			      $scope.images.push(last + i);
+			    }
+			};
+	
+	    }]);
+
+
+
+</script>
+</head>
+<body>
+    <div ng-controller="infinitScrollController">
+	    <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+		<!--<div ng-repeat='image in images' ng-bind="image"></div>-->
+	    	<!--<img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>-->
+	</div>  
+   </div>
+
+</body>
+</html>

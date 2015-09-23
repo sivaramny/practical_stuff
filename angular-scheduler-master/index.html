@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dayparting test/demo</title>
+
+    <link rel="stylesheet" href="css/angular-scheduler.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+
+    <script src="lib/angular-scheduler.min.js"></script>
+
+    <script>
+
+        angular.module('myapp', ['scheduler'])
+          .controller('Ctrl', function($scope){
+            $scope.slots = [
+                {start: 300, stop: 420, day: 1},
+                {start: 60, stop: 120, day: 1}
+            ];
+          });
+
+    </script>
+
+    <style>
+
+        body {
+            background: #f6f6f6;
+            font-size: 13px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 700px;
+            margin: 50px auto;
+        }
+
+    </style>
+
+</head>
+<body ng-app="myapp">
+    <div class="wrapper" ng-controller="Ctrl">
+
+        <div style="font-family: monospace; font-size: 14px; margin-bottom: 30px;">
+        {{slots}}
+        </div>
+
+        <scheduler class="scheduler" slots="slots"></dayparting>
+
+    </div>
+
+</body>
+</html>

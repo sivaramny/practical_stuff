@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="../../scripts/angular.js"></script>
+
+    <script type="text/javascript" src="lodash.js"></script>
+    <script type="text/javascript">
+	  angular.module('loadash-test', [])
+	    .factory('_', ['$window',
+	      function($window) {
+		// place lodash include before angular
+		return $window._;
+	      }
+	    ])
+	    .controller('MainCtrl', ['$scope', '_',
+	      function($scope, _) {
+		$scope.model = {
+		  'Ram': {
+		    type: 'object',
+		    age: 26
+		  },
+		  'Siva': {
+		    type: 'user',
+		    age: 25
+		  }
+		};
+
+		$scope.message = _.findKey($scope.model, {
+		  age: 25
+		});
+	      }
+	    ]);
+    </script>
+  </head>
+
+
+
+<body ng-app="loadash-test">
+  <div ng-controller="MainCtrl">
+    <div>{{message}}</div>
+  </div>
+</body>
+
+</html>
+

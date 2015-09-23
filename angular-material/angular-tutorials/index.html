@@ -1,0 +1,144 @@
+<html lang="en" ng-app="testApp">
+  <head>
+    <link rel="stylesheet" href="scripts/lib/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="scripts/lib/angular-data-table/md-data-table.css">
+    <meta name="viewport" content="initial-scale=1" />
+    <style>
+      	.md-toolbar-tools h1 {
+      	  font-size: inherit;
+      	  font-weight: inherit;
+      	  margin: inherit;
+      	}
+        md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+         min-width: 100px !important;
+         width: 50vw !important;
+         max-width: 200px !important;
+        }
+        .header{
+          height:100px;
+        }
+        .header h1{
+            font-size: 24px;
+            line-height: 90px;
+            position: absolute;
+        }
+        .header span {
+          color: rgb(255,153,0);
+          font-size: 16px;
+          font-style: italic;
+          position: absolute;
+          top: 46px;
+        }
+
+
+    </style>
+
+
+  </head>
+  <body layout="column" ng-controller="testAppCtrl">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <div class="header">
+          <h1>Angular Tutorials</h1>
+          <span style="position:absolute">by Sivaram</span>
+        </div>
+      </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <div ng-include src="'list.html'"></div>
+        </md-sidenav>
+        <md-content flex ng-view layout="column"></md-content>
+        </div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="scripts/lib/angular/angular.js"></script>
+    <script src="scripts/lib/angular-animate/angular-animate.js"></script>
+    <script src="scripts/lib/angular-aria/angular-aria.js"></script>
+    <script src="scripts/lib/angular-material/angular-material.js"></script>
+    <script src="scripts/lib/angular-data-table/md-data-table.js"></script>
+    <script src="scripts/lib/angular-route.min.js"></script>
+   
+    <script>
+      app = angular.module('testApp', ['ngMaterial', 'ngRoute', 'md.data.table']);
+      app.controller('testAppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+        $scope.toggleSidenav = function(menuId) {
+          $mdSidenav(menuId).toggle();
+        };
+        $scope.items = [
+          {
+            "title":"Introduction",
+            "link" : '/introduction'
+          },
+          {
+            "title":"Terminology",
+            "link" : '/terminology'
+          },
+          {
+            "title":"Install and Setup",
+            "link" : '/setup'
+          },
+          {
+            "title":"Angular Architecture",
+            "link" : '/architecture'
+          },
+          {
+            "title":"Directives",
+            "link" : '/directives'
+          },
+          {
+            "title":"Understanding scopes",
+            "link" : '/scopes'
+          },
+          {
+            "title":"Controllers",
+            "link" : '/controller'
+          },
+          {
+            "title":"Expressions",
+            "link" : '/expressions'
+          },
+          {
+            "title":"Filters",
+            "link" : '/filters'
+          },
+          {
+            "title":"Forms",
+            "link" : '/forms'
+          },
+          {
+            "title":"Routing",
+            "link" : '/routes'
+          },
+          {
+            "title":"Dependency Injection",
+            "link" : '/di'
+          },
+          {
+            "title":"Services and Factories",
+            "link" : '/services'
+          },
+          {
+            "title":"Angular Modularity",
+            "link" : '/modularity'
+          },
+          {
+            "title":"Animations",
+            "link" : '/animations'
+          },
+          {
+            "title":"Miscellenous",
+            "link" : '/animations'
+          }
+        ]
+      }]);
+    </script>
+     <script src="scripts/ng-routes.js"></script>
+  </body>
+</html>
+
+

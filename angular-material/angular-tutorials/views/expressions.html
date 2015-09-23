@@ -1,0 +1,84 @@
+
+<md-content class="md-padding">
+	<md-tabs md-dynamic-height md-border-bottom>
+	   <md-tab label="Notes">
+	    <md-content class="md-padding">
+	    	<ul>
+	    		<li>
+	    			Expressions are used to bind application data to html.
+	    		</li>
+	    		<li>
+	    			Expressions are written inside double braces: <span>&#123;&#123;</span><span>&nbsp;&nbsp;</span><span>&#125;&#125;</span>
+	    			<br/>
+	    			eg:<span>&#123;&#123;</span>5+5<span>&#125;&#125;</span>
+
+	    		</li>
+	    		<li>
+	    			Expressions binds data to HTML the same way as the ng-bind directive.
+	    		</li>
+	    		<li>
+	    			Expressions support filters also.
+	    		</li>
+	    	</ul>
+	    </md-content>
+	  </md-tab>
+	  <md-tab label="Examples">
+	    <md-content class="md-padding">
+	    	<md-card>
+	    		<md-card-content>
+						&lt;html&gt;<br />
+						  &lt;head&gt;<br />
+						      &lt;title&gt;Expressions Demo1&lt;/title&gt;<br />
+						   &lt;/head&gt;<br />
+						   <br />
+						   &lt;body&gt;<br />
+						      &lt;div ng-app = "" ng-init = "person = {name:'Sivaram'
+						  };"&gt;<br />&lt;p&gt;Hello &#123; &#123;person.name&#125; &#125;!&lt;/p&gt;<br />
+						      &lt;/div&gt;<br />
+						      <br />
+						      &lt;script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"&gt;&lt;/script&gt;<br />
+						      <br />
+						   &lt;/body&gt;<br />
+						&lt;/html&gt;
+	    		</md-card-content>
+	    	</md-card>
+	    	<md-card>
+	    		<md-card-content>
+						&lt;html&gt;<br />
+						&lt;head&gt;<br />
+						  &lt;title&gt;Expressions Demo2&lt;/title&gt;<br />
+						&lt;/head&gt;<br />
+						&lt;body&gt;<br />
+						 &lt;div ng-app="" ng-init="quantity=1;cost=5"&gt;<br />
+						<br />
+						   &lt;p&gt;Total in dollar: &#123; &#123; quantity * cost &#125; &#125;&lt;/p&gt;<br />
+						<br />
+						 &lt;/div&gt;<br />
+						&lt;script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"&gt;&lt;/script&gt;<br />
+						<br />
+						&lt;/body&gt;<br />
+						&lt;/html&gt;
+	    		</md-card-content>
+	    	</md-card>
+	    	<md-card>
+	    		<md-card-content>
+		    		&lt;html&gt;<br />
+					&lt;head&gt;<br />
+					  &lt;title&gt;Expressions Demo3&lt;/title&gt;<br />
+					&lt;/head&gt;<br />
+					&lt;body&gt;<br />
+					 &lt;div ng-app="" ng-init="color=['red', 'green', 'blue']"&gt;<br />
+					<br />
+					&lt;p&gt;The third result is &#123; &#123; color[2] &#125; &#125; &lt;/p&gt;<br />
+					<br />
+					&lt;/div&gt;<br />
+					&lt;script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"&gt;&lt;/script&gt;<br />
+					<br />
+					&lt;/body&gt;<br />
+					&lt;/html&gt;
+				</md-card-content>
+	    </md-card>
+	    </md-content>
+	  </md-tab>
+	</md-tabs>
+</md-content>

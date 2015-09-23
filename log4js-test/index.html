@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Log4js Example</title>
+ 
+  <script type="text/javascript" src="log4javascript.js"></script>
+  <script type="text/javascript">
+    var log = log4javascript.getDefaultLogger();
+log.info("Hello world");
+	try {
+		throw new Error("Faking something going wrong!");
+	} catch (e) {
+		log.error("An error occurred", e);
+	}
+	var a = "Hello";
+	var b = 3;
+	log.debug(a, b);
+	var obj = new Object();
+	obj.name = "Octopus";
+	obj.tentacles = 8;
+	log.info(obj);
+  </script>
+</head>
+<body>
+	
+ 
+</body>
+</html>
+
