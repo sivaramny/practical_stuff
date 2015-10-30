@@ -12,5 +12,11 @@ app.config(function($routeProvider){
             }).
             when('/filters', {
                 templateUrl: 'views/filters.html'
+            }).
+            when('/setup', {
+                templateUrl: 'views/env-setup.html'
+            }).
+            when('/di', {
+                templateUrl: 'views/di.html'
             })
 });

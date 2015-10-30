@@ -2,15 +2,15 @@
 <html ng-app="demoApp">
    <head> 
       <title>AngularJS Material Demo</title>
-      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"> 
+      <link rel="stylesheet" href="lib/angular-material/angular-material.css">
    </head>
    <body ng-controller="demoController"> 
       <md-button class="md-raised">{{buttonName}}</md-button> 
       <md-button class="md-raised md-warn">{{buttonName}}</md-button> 
       <md-button class="md-fab md-primary" aria-label="a Button"> {{buttonName}} </md-button>
-      <script src="bower_components/angular/angular.js"></script> 
-      <script src="bower_components/angular-animate/angular-animate.js"></script><script src="bower_components/angular-aria/angular-aria.js"></script> 
-      <script src="bower_components/angular-material/angular-material.js"></script> 
+      <script src="lib/angular/angular.js"></script> 
+      <script src="lib/angular-animate/angular-animate.js"></script><script src="lib/angular-aria/angular-aria.js"></script> 
+      <script src="lib/angular-material/angular-material.js"></script> 
       <script> 
          var demoApp = angular.module("demoApp",[ "ngMaterial" ]);
          demoApp.controller("demoController",function($scope){ 

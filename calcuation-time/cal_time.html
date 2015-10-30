@@ -1,0 +1,49 @@
+<html>
+<head>
+<script language="JavaScript">
+
+// function to calculate local time
+// in a different city
+// given the city's UTC offset
+function calcTime(offset) {
+
+    // create Date object for current location
+    d = new Date();
+    
+    // convert to msec
+    // add local time zone offset 
+    // get UTC time in msec
+    //utc = Date.UTC(yearStr, monthStr...);
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    
+    // create new Date object for different city
+    // using supplied offset
+    nd = new Date(utc + (3600000*offset));
+
+     //Formating the date
+     //newMonth = nd.getMonth() + 1
+     //nd = nd.getFullYear().toString() + "-" + newMonth.toString() + "-" + nd.getDate().toString() + " " + nd.getHours().toString() + ":" + nd.getMinutes().toString() + ":" + nd.getSeconds().toString()
+    
+    // return time as a string
+    return "The local time is " + nd.toLocaleString();
+
+}
+
+// get Bombay time
+alert(calcTime('+5.5'));
+
+// get Singapore time
+alert(calcTime('+8'));
+
+// get London time
+alert(calcTime('+1'));
+
+// get japan time
+alert(calcTime('+9'));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
