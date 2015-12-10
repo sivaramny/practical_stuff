@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="DemoApp">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="../scripts/angular.js"></script>
+	<script src="angular-fullscreen.js"></script>
+	<script src="app.js"></script>
+</head>
+
+
+<body>
+
+	<div ng-controller="MainCtrl">
+
+		<h2>Angular Fullscreen demo</h2>
+
+		<div class="column">
+
+			<!-- enable/disable fullscreen using the 'Fullscreen' service -->
+			<button ng-click="goFullscreen()">Enable/Disable Document Fullscreen</button>
+
+			<p>or click the images</p>
+
+			<input	type="text" placeholder="support fullscreen mode">
+			
+			<!--
+				enable fullscreen to a specific element using the 'fullscreen' directive
+				NOTE: you must set the element ID
+			-->
+			<img src="../img/image2.jpeg" fullscreen />
+			<img src="../img/image1.jpeg" fullscreen />
+
+			<hr />
+			<h3>Set an image in fullScreen mode changing the model and disable click on it</h3>
+			<button ng-click="goFullScreenViaWatcher()">Toggle FullScreen</button>
+			
+			<img src="../img/image6.jpeg" fullscreen="isFullScreen" only-watched-property/>
+			
+
+			<p>
+			   The Content Placed here...
+			</p>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

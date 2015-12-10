@@ -1,0 +1,38 @@
+<html ng-app="DTLocaleApp">  
+<head>  
+    <!-- bring in JS and angular -->  
+    <script src="../scripts/angular.js"></script>
+    <script>
+	angular.module('DTLocaleApp', [])  
+	.controller('DTLocaleController', function ($scope) { 
+		$scope.dateToConvert = "2015 Nov 26 10:00 AM +9";
+		$scope.$watch("dateToConvert", function(d){
+		    if(typeof(d) == "string") {
+		      var dateToConvert = new Date(d);
+		    } else {
+		      dateToConvert = d;
+		    }
+		    var convertedDateString = dateToConvert.toLocaleString();
+		    var convertedDate = new Date(convertedDateString);
+		    $scope.convertedDate = convertedDate;
+		 })
+	});  
+   </script>  
+</head>  
+  
+<body>  
+	<div ng-controller="DTLocaleController">
+	    <div>
+	      Enter JS date to be convrted to browser locale:
+	      <input ng-model="dateToConvert" size="64">
+	    </div>
+	    <div>
+	      Date in Local zone:
+	      <span>
+	      {{convertedDate | date:'medium'}}
+	    </span>
+	    </div>
+
+  	</div>
+</body>  
+</html>  
