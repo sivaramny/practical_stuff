@@ -94,3 +94,44 @@ node.append("text")
 To print object in alert
 =======================
 alert(d.toSource());
+
+zooming
+=========
+http://jsfiddle.net/6kEpp/2/
+http://stackoverflow.com/questions/20420383/d3-collapse-tree-semantic-zoom-and-pan-example-problems
+http://bl.ocks.org/robschmuecker/7880033
+http://kalkanotel.com/d3-collapsible-tree-only-drag-without-zoom-and-jump-and-scroll-i209447.htm
+
+To add any element to d3 tree graph (Redirection)
+==================================================
+nodeEnter.append("a")
+    .attr("xlink:href", function (d) { return "http://www.google.com"; })
+    .append("rect")
+        .attr("class", "clickable")
+        .attr("y", -6)
+        .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
+        .attr("width", 50) //2*4.5)
+        .attr("height", 12)
+        .style("fill", "lightsteelblue")
+        .style("fill-opacity", .3)     
+
+More Info
+==========
+http://wenda.baba.io/questions/3408922/add-iframe-to-each-node-on-a-d3-collapsible-tree-plugin.html
+
+https://gist.github.com/PBrockmann/0f22818096428b12ea23
+http://stackoverflow.com/questions/19763852/add-iframe-to-each-node-on-a-d3-collapsible-tree-plugin
+http://stackoverflow.com/questions/23995202/add-custom-html-to-nodes-in-d3-js-tree
+http://stackoverflow.com/questions/18230133/d3-tree-graph-with-links?rq=1
+http://bl.ocks.org/d3noob/9692795
+http://www.robschmuecker.com/d3-js-drag-and-drop-zoomable-tree/
+
+search
+======
+http://bl.ocks.org/PBrockmann/0f22818096428b12ea23
+
+videos
+=========
+https://www.youtube.com/watch?v=x8dwXoWODZ4
+
+
