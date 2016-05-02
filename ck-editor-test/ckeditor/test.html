@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>A Simple Page with CKEditor</title>
+        <!-- Make sure the path to CKEditor is correct. -->
+        <script src="ckeditor.js"></script>
+    </head>
+    <body>
+        <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <textarea id="monday" class="ckeditor" name="monday" >1</textarea>
+            <script type="text/javascript">
+		console.log("called............");
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+		//-CKEDITOR.plugins.addExternal( 'timestamp', 'http://sdk.ckeditor.com/samples/assets/plugins/timestamp/', 'plugin.js' );
+
+        		CKEDITOR.replace( 'editor1', {
+        			// Load the timestamp plugin.
+        			extraPlugins: 'timestamp'
+                });
+
+                function waitfunc() {
+                    setTimeout(function() {
+                        console.log("wait");
+                    }, 5000)
+                }
+                
+
+                CKEDITOR.instances['editor1'].on('key', function(event) {
+                    //waitfunc();
+                    console.log("calling,,,,,,,"+event.editor.getData());
+                    //waitfunc();
+                });
+
+
+                /* To Detect Mode */
+                CKEDITOR.instances['editor1'].on('mode', function() {
+                    console.log(this.mode); // outputs: source, wysiwyg
+                });
+
+                               
+                /*
+                CKEDITOR.instances["editor1"].on("keyup", function(e) {
+                    waitfunc();
+                    console.log("key change: " + e.editor.getData());
+                    waitfunc();
+                });
+                
+                CKEDITOR.instances['editor1'].on('contentDom', function() {
+                    console.log("contentDom..."+contentDom);
+                    CKEDITOR.instances['editor'].document.on('keyup', function(event) {
+                        document.getElementById("preview").innerHTML = CKEDITOR.instances.editor.getData();
+                    });
+
+
+
+
+                CKEDITOR.instances['editor']
+
+                CKEDITOR.instances['editor'].on('contentDom', function() {
+                    CKEDITOR.instances['editor'].document.on('keyup', function(event) {
+                        document.getElementById("preview").innerHTML = CKEDITOR.instances.editor.getData();
+                    });
+                });
+
+                setTimeout(function(){
+                    $('#monday').val('test');
+                    CKEDITOR.instances.monday.updateElement();
+                    alert( $('#monday').val());
+                },1000)
+                    */
+		
+            </script>
+        </form>
+    </body>
+</html>

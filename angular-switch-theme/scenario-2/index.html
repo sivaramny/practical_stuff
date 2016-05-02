@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="themeApp" >
+
+<head>
+  <link rel="stylesheet" ng-href="css/{{css}}.css" ng-if="css"/>
+  <link rel="stylesheet" ng-href="css/Red.css" ng-if="!css"/>
+</head>
+
+<body ng-controller="themeController">
+  <header>Header Here....</header>
+  <div ng-include src="'menu.html'"></div>
+  <pre>css </pre> {{css}}
+  <hr/>
+  <div ng-view></div>
+  <hr/>
+  <footer>Footer Here...</footer>
+  <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+  <script data-require="angular-route@*" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

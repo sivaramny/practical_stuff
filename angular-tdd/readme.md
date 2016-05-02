@@ -1,0 +1,9 @@
+Ref:
+===
+
+http://manuel.kiessling.net/2014/06/09/creating-a-useful-angularjs-project-structure-and-toolchain/
+https://github.com/atinfo/awesome-test-automation/blob/master/python-test-automation.md
+http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html
+
+http://packages.ubuntu.com/trusty/build-essential
+

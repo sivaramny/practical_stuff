@@ -38,3 +38,8 @@ For example:
 
 Ref:
 https://github.com/ckeditor/ckeditor-docs-samples
+
+issues:
+http://stackoverflow.com/questions/33261102/ckeditor-getdata-returning-stale-data-last-change-missing-in-source-mode?lq=1
+http://stackoverflow.com/questions/16713575/use-of-ckeditor-key-ckeditor-instances-editor-onkey-function-e
+http://stackoverflow.com/questions/3078598/detect-when-user-has-switched-editing-modes-in-ckeditor
