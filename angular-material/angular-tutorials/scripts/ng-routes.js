@@ -16,6 +16,12 @@ app.config(function($routeProvider){
             when('/setup', {
                 templateUrl: 'views/env-setup.html'
             }).
+            when('/animations', {
+                templateUrl: 'views/animations.html'
+            }).
+            when('/misc', {
+                templateUrl: 'views/misc.html'
+            }).
             when('/di', {
                 templateUrl: 'views/di.html'
             })
